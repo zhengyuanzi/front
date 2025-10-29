@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
   import { getIframeRoutes } from '@/router/utils/menuToRouter'
+  import { onMounted, ref } from 'vue'
 
   defineOptions({ name: 'IframeView' })
 
