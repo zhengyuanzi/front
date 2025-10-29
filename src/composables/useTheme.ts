@@ -64,11 +64,12 @@ export function useTheme() {
 
   // 自动设置系统主题
   const setSystemAutoTheme = () => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setSystemTheme(SystemThemeEnum.DARK, SystemThemeEnum.AUTO)
-    } else {
-      setSystemTheme(SystemThemeEnum.LIGHT, SystemThemeEnum.AUTO)
-    }
+    setSystemTheme(SystemThemeEnum.LIGHT, SystemThemeEnum.AUTO)
+    // if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    //   setSystemTheme(SystemThemeEnum.DARK, SystemThemeEnum.AUTO)
+    // } else {
+    //   setSystemTheme(SystemThemeEnum.LIGHT, SystemThemeEnum.AUTO)
+    // }
   }
 
   // 切换主题

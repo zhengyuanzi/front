@@ -5,37 +5,30 @@ export const dashboardRoutes: AppRouteRecord = {
   path: '/dashboard',
   component: '/index/index',
   meta: {
-    title: 'menus.dashboard.title',
+    title: '工作台',
     icon: '&#xe721;',
     roles: ['R_SUPER', 'R_ADMIN']
   },
   children: [
     {
-      path: 'console',
-      name: 'Console',
-      component: '/dashboard/console',
+      path: 'task',
+      name: 'Task',
+      component: '/dashboard/task',
       meta: {
-        title: 'menus.dashboard.console',
+        title: '任务单',
+        keepAlive: false
+      }
+    },
+    {
+      path: 'taskDetail',
+      name: 'TaskDetail',
+      component: '/dashboard/task/detail',
+      meta: {
+        title: '任务单详情',
         keepAlive: false,
-        fixedTab: true
-      }
-    },
-    {
-      path: 'analysis',
-      name: 'Analysis',
-      component: '/dashboard/analysis',
-      meta: {
-        title: 'menus.dashboard.analysis',
-        keepAlive: false
-      }
-    },
-    {
-      path: 'ecommerce',
-      name: 'Ecommerce',
-      component: '/dashboard/ecommerce',
-      meta: {
-        title: 'menus.dashboard.ecommerce',
-        keepAlive: false
+        isHide: true,
+        isHideTab: true,
+        activePath: '/dashboard/task'
       }
     }
   ]

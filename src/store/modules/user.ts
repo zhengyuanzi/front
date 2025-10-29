@@ -44,7 +44,15 @@ export const useUserStore = defineStore(
      * 设置用户信息
      * @param newInfo 新的用户信息
      */
-    const setUserInfo = (newInfo: Api.Auth.UserInfo) => {
+    const setUserInfo = (
+      newInfo: Awaited<{
+        buttons: string[]
+        roles: string[]
+        userName: string
+        userId: string
+        email: string
+      }>
+    ) => {
       info.value = newInfo
     }
 
@@ -127,7 +135,7 @@ export const useUserStore = defineStore(
       // 重置路由状态
       resetRouterState()
       // 跳转到登录页
-      router.push({ name: 'Login' })
+      // router.push({ name: 'Login' })
     }
 
     return {

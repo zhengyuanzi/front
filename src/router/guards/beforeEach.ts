@@ -128,7 +128,10 @@ async function handleLoginStatus(
 
   if (!userStore.isLogin && to.path !== RoutesAlias.Login && !isStaticRoute) {
     userStore.logOut()
-    next({ name: 'Login' })
+    const userInfo = await fetchGetUserInfo()
+    userStore.setUserInfo(userInfo)
+    userStore.setLoginStatus(true)
+    next('/')
     return false
   }
   return true
