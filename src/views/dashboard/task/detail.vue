@@ -68,8 +68,8 @@
   }
 
   const handleBeforeUpload: UploadProps['beforeUpload'] = (rawFile) => {
-    if (rawFile.size / 1024 / 1024 > 5) {
-      ElMessage.error('图片限制最大上传5MB!')
+    if (rawFile.size / 1024 / 1024 > 10) {
+      ElMessage.error('图片限制最大上传10MB!')
       return false
     }
     uploadLoading.value = true
