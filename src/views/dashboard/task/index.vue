@@ -101,7 +101,7 @@
   import { ElMessage, FormInstance } from 'element-plus'
   import { router } from '@/router'
 
-  const tableData = ref<TaskItem[]>([])
+  const tableData = ref<TaskItemRep[]>([])
   const formData = ref({
     taskId: '',
     taskName: '',
