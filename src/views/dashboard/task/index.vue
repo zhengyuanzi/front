@@ -63,7 +63,7 @@
               fit="cover"
               v-if="scope.row.Prototype"
             />
-            <template>无</template>
+            <span v-else>无</span>
           </template>
         </el-table-column>
         <el-table-column prop="CreateTime" min-width="120" label="创建时间" align="center" />
