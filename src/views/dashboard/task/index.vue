@@ -52,7 +52,16 @@
           <template #default="scope">{{ statusMap[scope.row.Status] }}</template>
         </el-table-column>
         <el-table-column prop="Workload" min-width="80" label="工作量" align="center" />
-        <el-table-column prop="Prototype" min-width="150" label="原型图" align="center" />
+        <el-table-column prop="Prototype" min-width="150" label="原型图" align="center">
+          <template #default="scope">
+            <el-image
+              style="width: 100px"
+              :src="scope.row.Prototype"
+              :preview-src-list="[scope.row.Prototype]"
+              fit="cover"
+            />
+          </template>
+        </el-table-column>
         <el-table-column prop="CreateTime" label="创建时间" />
         <el-table-column prop="UpdateTime" label="修改时间" />
         <el-table-column label="操作">
