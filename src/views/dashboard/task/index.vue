@@ -46,15 +46,17 @@
         >新增任务
       </el-button>
       <el-table v-loading="loading" :data="tableData" style="width: 100%">
-        <el-table-column prop="TaskId" label="任务编号" min-width="180" />
-        <el-table-column prop="TaskName" label="任务名称" min-width="220" />
-        <el-table-column min-width="80" label="任务状态" align="center">
+        <el-table-column prop="TaskId" label="任务编号" min-width="100" />
+        <el-table-column prop="TaskName" label="任务名称" min-width="150" />
+        <el-table-column prop="Status" min-width="80" label="任务状态" align="center">
           <template #default="scope">{{ statusMap[scope.row.Status] }}</template>
         </el-table-column>
+        <el-table-column prop="ServerName" min-width="80" label="后端人员" align="center" />
         <el-table-column prop="Workload" min-width="80" label="工作量" align="center" />
         <el-table-column prop="Prototype" min-width="150" label="原型图" align="center">
           <template #default="scope">
             <el-image
+              :preview-teleported="true"
               style="width: 100px"
               :src="scope.row.Prototype"
               :preview-src-list="[scope.row.Prototype]"
@@ -62,9 +64,9 @@
             />
           </template>
         </el-table-column>
-        <el-table-column prop="CreateTime" label="创建时间" />
-        <el-table-column prop="UpdateTime" label="修改时间" />
-        <el-table-column label="操作">
+        <el-table-column prop="CreateTime" min-width="120" label="创建时间" align="center" />
+        <el-table-column prop="UpdateTime" min-width="120" label="更新时间" align="center" />
+        <el-table-column label="操作" min-width="80">
           <template #default="scope">
             <el-button
               link

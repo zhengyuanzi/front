@@ -40,17 +40,17 @@ export const useSettingStore = defineStore(
     /** 是否显示菜单按钮 */
     const showMenuButton = ref(true)
     /** 是否显示快速入口 */
-    const showFastEnter = ref(true)
+    const showFastEnter = ref(false)
     /** 是否显示刷新按钮 */
     const showRefreshButton = ref(true)
     /** 是否显示面包屑 */
     const showCrumbs = ref(true)
     /** 是否显示工作台标签 */
-    const showWorkTab = ref(true)
+    const showWorkTab = ref(false)
     /** 是否显示语言切换 */
-    const showLanguage = ref(true)
+    const showLanguage = ref(false)
     /** 是否显示进度条 */
-    const showNprogress = ref(false)
+    const showNprogress = ref(true)
     /** 是否显示设置引导 */
     const showSettingGuide = ref(true)
     /** 是否显示节日文本 */

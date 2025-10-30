@@ -1,6 +1,6 @@
 import request from '@/utils/http'
 
-export interface TaskItem {
+export interface TaskItemBase {
   Id?: number | ''
   TaskId: string
   TaskName: string
@@ -11,8 +11,16 @@ export interface TaskItem {
   UpdateTime?: string
 }
 
+export interface TaskItem extends TaskItemBase {
+  ServerName?: string[]
+}
+
+export interface TaskItemRep extends TaskItemBase {
+  ServerName?: string
+}
+
 export interface FetchTaskListSuccessRes {
-  list: TaskItem[]
+  list: TaskItemRep[]
   total: number
 }
 
@@ -30,7 +38,7 @@ export function fetchTaskList(params: FetchTaskListParams): Promise<FetchTaskLis
   })
 }
 
-export function fetchTaskDetail(id: string): Promise<TaskItem> {
+export function fetchTaskDetail(id: string): Promise<TaskItemRep> {
   return request.get({
     url: '/api/task/getTaskDetail',
     params: {
@@ -39,14 +47,14 @@ export function fetchTaskDetail(id: string): Promise<TaskItem> {
   })
 }
 
-export function fetchTaskCreate(data: TaskItem): Promise<TaskItem> {
+export function fetchTaskCreate(data: TaskItemRep): Promise<TaskItemRep> {
   return request.post({
     url: '/api/task/createTask',
     data
   })
 }
 
-export function fetchTaskUpdate(data: TaskItem) {
+export function fetchTaskUpdate(data: TaskItemRep) {
   return request.post({
     url: '/api/task/updateTask',
     data
