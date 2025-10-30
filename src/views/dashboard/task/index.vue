@@ -97,7 +97,7 @@
 
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue'
-  import { fetchTaskDelete, fetchTaskList, TaskItem } from '@/api/task'
+  import { fetchTaskDelete, fetchTaskList, TaskItemRep } from '@/api/task'
   import { ElMessage, FormInstance } from 'element-plus'
   import { router } from '@/router'
 
