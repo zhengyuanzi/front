@@ -45,6 +45,7 @@
     formEl.validate((valid) => {
       if (valid) {
         const api = route.query.id ? fetchTaskUpdate : fetchTaskCreate
+        loading.value = true;
         api({
           ...formData.value,
           ServerName: formData.value?.ServerName?.join(',')
@@ -54,6 +55,8 @@
             type: 'success'
           })
           router.go(-1)
+        }).finally(() => {
+          loading.value = false;
         })
       }
     })
