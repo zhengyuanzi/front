@@ -126,7 +126,7 @@
 
         <!-- 用户头像、菜单 -->
         <div class="user">
-          <img class="cover" src="@imgs/user/avatar.webp" alt="avatar" />
+          <img class="cover" src="@imgs/user/avatar.png" alt="avatar" />
 <!--          <ElPopover-->
 <!--            ref="userMenuPopover"-->
 <!--            placement="bottom-end"-->
