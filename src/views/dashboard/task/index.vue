@@ -91,7 +91,7 @@
         </el-table-column>
       </el-table>
       <div class="pagination">
-        <el-pagination background layout="prev, pager, next" :total="total" />
+        <el-pagination background layout="prev, pager, next" :total="total" @current-change="handlePage" />
       </div>
     </el-card>
   </div>
@@ -162,6 +162,10 @@
       })
       getTaskList(1)
     })
+  }
+
+  function handlePage(e: number) {
+    getTaskList(e)
   }
 </script>
 
